@@ -499,39 +499,6 @@ function CFAHub:CreateWindow(title, gameName, intro)
 	ElementCorner.Name = "ElementCorner"
 	ElementCorner.Parent = ElementContainer
 
-	local Fader = Instance.new("Frame")
-	local FaderGradient = Instance.new("UIGradient")
-	local Fader_2 = Instance.new("Frame")
-	local FaderGradient_2 = Instance.new("UIGradient")
-
-	Fader.Name = "Fader"
-	Fader.Parent = ElementContainer
-	Fader.AnchorPoint = Vector2.new(0, 1)
-	Fader.BackgroundColor3 = themes.Background
-	Objects[Fader] = "Background"
-	Fader.BorderSizePixel = 0
-	Fader.Position = UDim2.new(0, 0, 1, 0)
-	Fader.Size = UDim2.new(1, 0, -0.0388888903, 44)
-	Fader.ZIndex = 3
-
-	FaderGradient.Rotation = -90
-	FaderGradient.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.00), NumberSequenceKeypoint.new(1.00, 1.00)}
-	FaderGradient.Name = "FaderGradient"
-	FaderGradient.Parent = Fader
-
-	Fader_2.Name = "Fader"
-	Fader_2.Parent = ElementContainer
-	Fader_2.BackgroundColor3 = themes.Background
-	Objects[Fader_2] = "Background"
-	Fader_2.BorderSizePixel = 0
-	Fader_2.Size = UDim2.new(1, 0, -0.0388888903, 44)
-	Fader_2.ZIndex = 3
-
-	FaderGradient_2.Rotation = 90
-	FaderGradient_2.Transparency = NumberSequence.new{NumberSequenceKeypoint.new(0.00, 0.00), NumberSequenceKeypoint.new(1.00, 1.00)}
-	FaderGradient_2.Name = "FaderGradient"
-	FaderGradient_2.Parent = Fader_2
-
 	local UIPageLayout = Instance.new("UIPageLayout")
 
 	UIPageLayout.Parent = Elements
@@ -627,8 +594,6 @@ function CFAHub:CreateWindow(title, gameName, intro)
 		while wait() do
 			Container.BackgroundColor3 = themes.Container
 			ElementContainer.BackgroundColor3 = themes.Background
-			Fader.BackgroundColor3 = themes.Background
-			Fader_2.BackgroundColor3 = themes.Background
 			Header.BackgroundColor3 = themes.Header
 			coverup.BackgroundColor3 = themes.Header
 			Title.TextColor3 = themes.TextColor
