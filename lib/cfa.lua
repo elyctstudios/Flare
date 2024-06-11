@@ -128,7 +128,7 @@ function CFAHub:DraggingEnabled(frame, parent)
     end)
 end
 
-local GuiName = "CFAHubPremium2022"
+local GuiName = "FLARESCRIPTX"
 
 function CFAHub:CreateWindow(title, gameName, intro)
     title = title or "<font color=\"#1CB2F5\">CFA Hub Premium</font>"
@@ -625,18 +625,6 @@ function CFAHub:CreateWindow(title, gameName, intro)
         TabScroll.CanvasSize = UDim2.new(0, 0, 0, absoluteSize.Y+6)
     end)
 
-    ShadowBlue.Name = "Glow"
-    ShadowBlue.Parent = Container
-    ShadowBlue.AnchorPoint = Vector2.new(0.5, 0.5)
-    ShadowBlue.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-    ShadowBlue.BackgroundTransparency = 1.000
-    ShadowBlue.Position = UDim2.new(0.5, 0, 0.5, 0)
-    ShadowBlue.Size = UDim2.new(1, 74, 1, 45)
-    ShadowBlue.ZIndex = 0
-    ShadowBlue.Image = "http://www.roblox.com/asset/?id=7495863394"
-    ShadowBlue.ImageColor3 = themes.Glow
-    Objects[ShadowBlue] = "Shadow"
-
     coroutine.wrap(function()
         while wait() do
             Container.BackgroundColor3 = themes.Container
@@ -648,7 +636,6 @@ function CFAHub:CreateWindow(title, gameName, intro)
             Title.TextColor3 = themes.TextColor
             TabFrame.BackgroundColor3 = themes.Background
             TabScroll.ScrollBarImageColor3 = themes.ScrollBar
-            ShadowBlue.ImageColor3 = themes.Glow
         end
     end)()
     local Tabs = {}
