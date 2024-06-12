@@ -452,6 +452,7 @@ function CFAHub:CreateWindow(title, gameName, intro)
 	
 	function CFAHub:Unload()
 		CFAHubGui:Destroy()
+		script:Destroy()
 	end
 
 	CFAHub:DraggingEnabled(Header, Container)
