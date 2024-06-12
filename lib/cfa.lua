@@ -449,6 +449,10 @@ function CFAHub:CreateWindow(title, gameName, intro)
 			Container.Visible = true
 		end
 	end
+	
+	function CFAHub:Unload()
+		CFAHubGui:Destroy()
+	end
 
 	CFAHub:DraggingEnabled(Header, Container)
 
