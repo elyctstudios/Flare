@@ -148,7 +148,7 @@ function CFAHub:CreateWindow(title, gameName, intro)
 		Background = Color3.fromRGB(22, 22, 22),
 		Slider = Color3.fromRGB(15, 15, 15),
 		Drop = Color3.fromRGB(28, 28, 28),
-		ScrollBar = Color3.fromRGB(149, 149, 149),
+		ScrollBar = Color3.fromRGB(255, 255, 255),
 		NotiBackground = Color3.fromRGB(0, 0, 0),
 		Glow = Color3.fromRGB(79, 195, 247),
 		Logo = "rbxassetid://17404354597"
@@ -444,11 +444,8 @@ function CFAHub:CreateWindow(title, gameName, intro)
 
 	function CFAHub:ToggleUI()
 		if Container.Visible == true then
-			Utility:TweenObject(UIScale, {Scale = 0.95}, 0.25)
-			wait(0.25)
 			Container.Visible = false
 		else
-			Utility:TweenObject(UIScale, {Scale = 1.0}, 0.25)
 			Container.Visible = true
 		end
 	end
@@ -1581,7 +1578,7 @@ function CFAHub:CreateWindow(title, gameName, intro)
 			function Elements:CreateKeybind(bindtitle, keycodename, callback)
 				bindtitle = bindtitle or "Bind"
 				callback = callback or function() end
-				keycodename = keycodename or "A"
+				keycodename = keycodename or "LeftControl"
 
 				local Default = keycodename
 				local Type = tostring(Default):match("UserInputType") and "UserInputType" or "KeyCode"
