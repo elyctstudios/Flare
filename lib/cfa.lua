@@ -222,11 +222,9 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	Mouse.Image = "rbxassetid://1024139053"
 	Mouse.ZIndex = 9999
 	
-	Mouse.Visible = true
-
-	
 	local function MOUSEMOVEMENTSCRIPTFORSKIBIDI()
-		local script = Instance.new('LocalScript', Mouse)
+		local script = Instance.new('LocalScript')
+		script.Parent = Mouse
 
 		local Mouse = game.Players.LocalPlayer:GetMouse()
 
