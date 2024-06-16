@@ -233,7 +233,7 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 		local Mouse2 = game.Players.LocalPlayer:GetMouse()
 
 		while wait() do
-			Mouse.Position = UDim2.new(0, Mouse2.X, 0, Mouse2.Y)
+			script.Parent.Position = UDim2.new(0, Mouse2.X, 0, Mouse2.Y)
 		end
 	end
 	coroutine.wrap(GMVO_fake_script)()
