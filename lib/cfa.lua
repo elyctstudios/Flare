@@ -225,8 +225,7 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	UIAspectRatioConstraint.Parent = Mouse
 	
 	local function MOUSEMOVEMENTSCRIPTFORSKIBIDI()
-		local script = Instance.new('LocalScript')
-		script.Parent = Mouse
+		local script = Instance.new('LocalScript', Mouse)
 
 		local Mouse = game.Players.LocalPlayer:GetMouse()
 
