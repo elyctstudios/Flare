@@ -211,7 +211,7 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 
 			local Mouse = game.Players.LocalPlayer:GetMouse()
 
-			while true do
+			while true do wait() end
 				script.Parent.Position = UDim2.new(0, Mouse.X, 0, Mouse.Y)
 			end
 		end
