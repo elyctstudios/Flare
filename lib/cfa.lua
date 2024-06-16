@@ -218,15 +218,12 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	Mouse.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Mouse.BorderSizePixel = 0
 	Mouse.Position = UDim2.new(0.499599665, 0, 0.499421954, 0)
-	Mouse.Size = UDim2.new(0.0168134496, 0, 0.0312138721, 0)
+	Mouse.Size = UDim2.new(0.1, 0, 0.1, 0)
 	Mouse.Image = "rbxassetid://1024139053"
+	Mouse.ZIndex = 999
+	
 	UIAspectRatioConstraint.Parent = Mouse
-
-	local script = Instance.new('LocalScript', Mouse)
-
-	local Mouse = game.Players.LocalPlayer:GetMouse()
-
-
+	
 	local function GMVO_fake_script()
 		local script = Instance.new('LocalScript', Mouse)
 
