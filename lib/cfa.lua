@@ -224,16 +224,13 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 
 	UIAspectRatioConstraint.Parent = Mouse
 
-	local function GMVO_fake_script()
-		local script = Instance.new('LocalScript', Mouse)
+	local script = Instance.new('LocalScript', Mouse)
 
-		local Mouse = game.Players.LocalPlayer:GetMouse()
+	local Mouse = game.Players.LocalPlayer:GetMouse()
 
-		while wait() do
+	while wait() do
 			script.Parent.Position = UDim2.new(0, Mouse.X, 0, Mouse.Y)
-		end
 	end
-	coroutine.wrap(GMVO_fake_script)()
 
 	
 	-- NOTIFICATION
