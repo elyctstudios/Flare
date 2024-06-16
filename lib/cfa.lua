@@ -230,10 +230,10 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	local function GMVO_fake_script()
 		local script = Instance.new('LocalScript', Mouse)
 
-		local Mouse = game.Players.LocalPlayer:GetMouse()
+		local Mouse2 = game.Players.LocalPlayer:GetMouse()
 
 		while wait() do
-			Mouse.Position = UDim2.new(0, Mouse.X, 0, Mouse.Y)
+			Mouse.Position = UDim2.new(0, Mouse2.X, 0, Mouse2.Y)
 		end
 	end
 	coroutine.wrap(GMVO_fake_script)()
