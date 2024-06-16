@@ -130,7 +130,7 @@ end
 
 local GuiName = "FLARESCRIPTX"
 
-function CFAHub:CreateWindow(title, gameName, intro)
+function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	title = title or "<font color=\"#1CB2F5\">CFA Hub Premium</font>"
 	gameName = gameName or "N/A"
 
@@ -187,6 +187,35 @@ function CFAHub:CreateWindow(title, gameName, intro)
 		wait(0.2)
 
 		Logo:Destroy()
+	end
+	
+	if cursor == true then
+		local Mouse = Instance.new("ImageLabel")
+		local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+
+		Mouse.Name = "Mouse"
+		Mouse.Parent = CFAHubGui
+		Mouse.AnchorPoint = Vector2.new(0.5, 0.5)
+		Mouse.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		Mouse.BackgroundTransparency = 1.000
+		Mouse.BorderColor3 = Color3.fromRGB(0, 0, 0)
+		Mouse.BorderSizePixel = 0
+		Mouse.Position = UDim2.new(0.499599665, 0, 0.499421954, 0)
+		Mouse.Size = UDim2.new(0.01, 0, 0.01, 0)
+		Mouse.Image = "rbxassetid://1024139053"
+
+		UIAspectRatioConstraint.Parent = Mouse
+
+		local function MDAQGUY_fake_script()
+			local script = Instance.new('LocalScript', Mouse)
+
+			local Mouse = game.Players.LocalPlayer:GetMouse()
+
+			while true do
+				script.Parent.Position = UDim2.new(0, Mouse.X, 0, Mouse.Y)
+			end
+		end
+		coroutine.wrap(MDAQGUY_fake_script)()
 	end
 
 	local Container = Instance.new("Frame")
@@ -449,7 +478,7 @@ function CFAHub:CreateWindow(title, gameName, intro)
 			Container.Visible = true
 		end
 	end
-	
+
 	function CFAHub:Unload()
 		CFAHubGui:Destroy()
 		script:Destroy()
