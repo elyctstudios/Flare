@@ -221,7 +221,7 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	Mouse.Size = UDim2.new(0.01, 0, 0.01, 0)
 	Mouse.Image = "rbxassetid://1024139053"
 	
-	Mouse.Visible = false
+	Mouse.Visible = true
 	
 	coroutine.wrap(function()
 		local script = Instance.new('LocalScript', Mouse)
@@ -232,14 +232,6 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 		script.Parent.Position = UDim2.new(0, Mouse.X, 0, Mouse.Y)
 	end)
 	
-	function CFAHub:ShowMouse()
-		Mouse.Visible = true
-	end
-
-	function CFAHub:HideMouse()
-		Mouse.Visible = false
-	end
-
 	-- NOTIFICATION
 
 	local UIListLayout = Instance.new("UIListLayout")
