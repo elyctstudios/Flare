@@ -223,15 +223,17 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	Mouse.ZIndex = 9999
 	
 	Mouse.Visible = true
+
 	
-	coroutine.wrap(function()
+	local function MOUSEMOVEMENTSCRIPTFORSKIBIDI()
 		local script = Instance.new('LocalScript', Mouse)
 
 		local Mouse = game.Players.LocalPlayer:GetMouse()
 
 		while true do wait() end
 		script.Parent.Position = UDim2.new(0, Mouse.X, 0, Mouse.Y)
-	end)
+	end
+	coroutine.wrap(MOUSEMOVEMENTSCRIPTFORSKIBIDI)()
 	
 	-- NOTIFICATION
 
