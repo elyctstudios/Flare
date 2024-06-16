@@ -206,7 +206,7 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	local TabCorner = Instance.new("UICorner")
 	local TabScroll = Instance.new("ScrollingFrame")
 	local TabGridLayout = Instance.new("UIGridLayout")
-	
+
 
 	local Mouse = Instance.new("ImageLabel")
 	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
@@ -221,10 +221,10 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	Mouse.Size = UDim2.new(0.01, 0, 0.01, 0)
 	Mouse.Image = "rbxassetid://1024139053"
 	Mouse.ZIndex = 999
-	
+
 	UIAspectRatioConstraint.Parent = Mouse
-	
-	local function GMVO_fake_script()
+
+	local function One()
 		local script = Instance.new('LocalScript', Mouse)
 
 		local Mouse2 = game.Players.LocalPlayer:GetMouse()
@@ -233,9 +233,20 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 			script.Parent.Position = UDim2.new(0, Mouse2.X, 0, Mouse2.Y)
 		end
 	end
-	coroutine.wrap(GMVO_fake_script)()
 
-	
+	local function Two()
+		local script = Instance.new('LocalScript', Mouse)
+
+		local Mouse2 = game.Players.LocalPlayer:GetMouse()
+
+		while wait() do
+			script.Parent.Position = UDim2.new(0, Mouse2.X, 0, Mouse2.Y)
+		end
+	end
+
+	coroutine.wrap(One)()
+	coroutine.wrap(Two)()
+
 	-- NOTIFICATION
 
 	local UIListLayout = Instance.new("UIListLayout")
@@ -1004,7 +1015,7 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 						ToggleText.TextColor3 = themes.TextColor
 					end
 				end)()
-				
+
 
 				local isToggle = false
 
