@@ -222,6 +222,8 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	Mouse.Image = "rbxassetid://1024139053"
 	Mouse.ZIndex = 9999
 	
+	UIAspectRatioConstraint.Parent = Mouse
+	
 	local function MOUSEMOVEMENTSCRIPTFORSKIBIDI()
 		local script = Instance.new('LocalScript')
 		script.Parent = Mouse
