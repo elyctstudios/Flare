@@ -220,6 +220,7 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	Mouse.Position = UDim2.new(0.499599665, 0, 0.499421954, 0)
 	Mouse.Size = UDim2.new(0.01, 0, 0.01, 0)
 	Mouse.Image = "rbxassetid://1024139053"
+	Mouse.ZIndex = 9999
 	
 	Mouse.Visible = true
 	
