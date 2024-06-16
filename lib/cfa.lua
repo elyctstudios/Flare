@@ -220,17 +220,23 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	Mouse.Position = UDim2.new(0.499599665, 0, 0.499421954, 0)
 	Mouse.Size = UDim2.new(0.0168134496, 0, 0.0312138721, 0)
 	Mouse.Image = "rbxassetid://1024139053"
-	Mouse.ZIndex = 9999
-
 	UIAspectRatioConstraint.Parent = Mouse
 
 	local script = Instance.new('LocalScript', Mouse)
 
 	local Mouse = game.Players.LocalPlayer:GetMouse()
 
-	while wait() do
-			script.Parent.Position = UDim2.new(0, Mouse.X, 0, Mouse.Y)
+
+	local function GMVO_fake_script()
+		local script = Instance.new('LocalScript', Mouse)
+
+		local Mouse = game.Players.LocalPlayer:GetMouse()
+
+		while wait() do
+			Mouse.Position = UDim2.new(0, Mouse.X, 0, Mouse.Y)
+		end
 	end
+	coroutine.wrap(GMVO_fake_script)()
 
 	
 	-- NOTIFICATION
