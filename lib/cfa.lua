@@ -206,6 +206,39 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	local TabCorner = Instance.new("UICorner")
 	local TabScroll = Instance.new("ScrollingFrame")
 	local TabGridLayout = Instance.new("UIGridLayout")
+	
+	local Mouse = Instance.new("ImageLabel")
+	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+
+	Mouse.Name = "Mouse"
+	Mouse.Parent = CFAHubGui
+	Mouse.AnchorPoint = Vector2.new(0.5, 0.5)
+	Mouse.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Mouse.BackgroundTransparency = 1.000
+	Mouse.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	Mouse.BorderSizePixel = 0
+	Mouse.Position = UDim2.new(0.499599665, 0, 0.499421954, 0)
+	Mouse.Size = UDim2.new(0.01, 0, 0.01, 0)
+	Mouse.Image = "rbxassetid://1024139053"
+	
+	Mouse.Visible = false
+	
+	coroutine.wrap(function()
+		local script = Instance.new('LocalScript', Mouse)
+
+		local Mouse = game.Players.LocalPlayer:GetMouse()
+
+		while true do wait() end
+		script.Parent.Position = UDim2.new(0, Mouse.X, 0, Mouse.Y)
+	end)
+	
+	function CFAHub:ShowMouse()
+		Mouse.Visible = true
+	end
+
+	function CFAHub:HideMouse()
+		Mouse.Visible = false
+	end
 
 	-- NOTIFICATION
 
@@ -248,19 +281,8 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 		local Bar = Instance.new("Frame")
 		local UICorner_4 = Instance.new("UICorner")
 		local UICorner_5 = Instance.new("UICorner")
-		local Mouse = Instance.new("ImageLabel")
-		local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 
-		Mouse.Name = "Mouse"
-		Mouse.Parent = CFAHubGui
-		Mouse.AnchorPoint = Vector2.new(0.5, 0.5)
-		Mouse.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Mouse.BackgroundTransparency = 1.000
-		Mouse.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Mouse.BorderSizePixel = 0
-		Mouse.Position = UDim2.new(0.499599665, 0, 0.499421954, 0)
-		Mouse.Size = UDim2.new(0.01, 0, 0.01, 0)
-		Mouse.Image = "rbxassetid://1024139053"
+
 
 		Template.Name = "Template"
 		Template.Parent = CurrentAlert
@@ -462,7 +484,7 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 			Container.Visible = true
 		end
 	end
-	
+
 	function CFAHub:Unload()
 		CFAHubGui:Destroy()
 		script:Destroy()
@@ -986,6 +1008,7 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 						ToggleText.TextColor3 = themes.TextColor
 					end
 				end)()
+				
 
 				local isToggle = false
 
