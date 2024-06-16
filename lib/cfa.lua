@@ -218,7 +218,7 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	Mouse.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	Mouse.BorderSizePixel = 0
 	Mouse.Position = UDim2.new(0.499599665, 0, 0.499421954, 0)
-	Mouse.Size = UDim2.new(0.01, 0, 0.01, 0)
+	Mouse.Size = UDim2.new(0.017, 0,0.031, 0)
 	Mouse.Image = "rbxassetid://1024139053"
 	Mouse.ZIndex = 999
 	
