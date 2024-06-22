@@ -267,7 +267,7 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 	CurrentAlert.Size = UDim2.new(1, -10, 1, -10)
 	CurrentAlert.ZIndex = 9
 
-	function CFAHub:AddNoti(header, message, duration, buttonEnable, callback)
+	function CFAHub:AddNoti(header, message, duration, callback)
 		header = header or "Announcement"
 		message = message or "Nil"
 		duration = duration or 120
@@ -278,12 +278,6 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 		local Message = Instance.new("TextLabel")
 		local UICorner = Instance.new("UICorner")
 		local ButtonContainer = Instance.new("Frame")
-		local YesButton = Instance.new("TextButton")
-		local UICorner_2 = Instance.new("UICorner")
-		local YesIcon = Instance.new("ImageLabel")
-		local NoButton = Instance.new("TextButton")
-		local UICorner_3 = Instance.new("UICorner")
-		local NoIcon = Instance.new("ImageLabel")
 		local BarFrame = Instance.new("Frame")
 		local Bar = Instance.new("Frame")
 		local UICorner_4 = Instance.new("UICorner")
@@ -348,67 +342,7 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 		ButtonContainer.Size = UDim2.new(0, 43, 0, 61)
 		ButtonContainer.ZIndex = 2
 
-		YesButton.Name = "YesButton"
-		YesButton.Parent = ButtonContainer
-		YesButton.AnchorPoint = Vector2.new(1, 0)
-		YesButton.BackgroundColor3 = Color3.fromRGB(67, 116, 58)
-		if buttonEnable == false then
-			YesButton.BackgroundTransparency = 0.6
-			YesButton.Active = false
-			YesButton.Visible = false
-			NoButton.Visible = false
-		else
-			YesButton.BackgroundTransparency = 0
-		end
-		YesButton.Position = UDim2.new(1, 0, 0, 0)
-		YesButton.Size = UDim2.new(1, 0, 0, 27)
-		YesButton.ZIndex = 2
-		YesButton.AutoButtonColor = false
-		YesButton.Font = Enum.Font.SourceSansSemibold
-		YesButton.Text = ""
-		YesButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-		YesButton.TextSize = 22.000
-
-		UICorner_2.CornerRadius = UDim.new(0, 4)
-		UICorner_2.Parent = YesButton
-
-		YesIcon.Name = "YesIcon"
-		YesIcon.Parent = YesButton
-		YesIcon.AnchorPoint = Vector2.new(0.5, 0.5)
-		YesIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		YesIcon.BackgroundTransparency = 1.000
-		YesIcon.Position = UDim2.new(0.5, 0, 0.5, 0)
-		YesIcon.Size = UDim2.new(0, 20, 0, 20)
-		YesIcon.Image = "rbxassetid://7072706620"
-
-		Animate:CreateGradient(YesButton)
-
-		NoButton.Name = "NoButton"
-		NoButton.Parent = ButtonContainer
-		NoButton.AnchorPoint = Vector2.new(1, 1)
-		NoButton.BackgroundColor3 = Color3.fromRGB(184, 41, 65)
-		NoButton.Position = UDim2.new(1, 0, 1, 0)
-		NoButton.Size = UDim2.new(1, 0, 0, 27)
-		NoButton.ZIndex = 2
-		NoButton.Font = Enum.Font.SourceSansSemibold
-		NoButton.Text = ""
-		NoButton.AutoButtonColor = false
-		NoButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-		NoButton.TextSize = 22.000
-
-		UICorner_3.CornerRadius = UDim.new(0, 4)
-		UICorner_3.Parent = NoButton
-
 		Animate:CreateGradient(NoButton)
-
-		NoIcon.Name = "NoIcon"
-		NoIcon.Parent = NoButton
-		NoIcon.AnchorPoint = Vector2.new(0.5, 0.5)
-		NoIcon.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		NoIcon.BackgroundTransparency = 1.000
-		NoIcon.Position = UDim2.new(0.5, 0, 0.5, 0)
-		NoIcon.Size = UDim2.new(0, 20, 0, 20)
-		NoIcon.Image = "rbxassetid://7072725342"
 
 		BarFrame.Name = "BarFrame"
 		BarFrame.Parent = Template
@@ -458,33 +392,11 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 			Utility:TweenTransparency(Bar,"bg",1)
 			Utility:TweenTransparency(Header,"text",1)
 			Utility:TweenTransparency(Message,"text",1)
-			Utility:TweenTransparency(YesButton,"bg",1)
-			Utility:TweenTransparency(YesButton,"text",1)
-			Utility:TweenTransparency(YesIcon, 'img', 1)
-			Utility:TweenTransparency(NoButton,"bg",1)
-			Utility:TweenTransparency(NoButton,"text",1)
-			Utility:TweenTransparency(NoIcon, 'img', 1)
 			wait(0.25)
 			Template:Destroy()
 		end
 
 		close.Completed:Connect(function()
-			closeNoti()
-		end)
-
-		YesButton.MouseButton1Click:Connect(function()
-			if buttonEnable == false then
-				return
-			else
-				Utility:Pop(YesButton, 8)
-				closeNoti()
-				wait(0.02)
-				callback()
-			end
-		end)
-
-		NoButton.MouseButton1Click:Connect(function()
-			Utility:Pop(NoButton, 8)
 			closeNoti()
 		end)
 	end -- final
