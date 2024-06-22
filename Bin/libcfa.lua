@@ -291,6 +291,8 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 		local NotificationSound = Instance.new("Sound")
 		
 		NotificationSound.SoundId = "rbxassetid://6205430632"
+		
+		NotificationSound:Play()
 
 		Template.Name = "Template"
 		Template.Parent = CurrentAlert
