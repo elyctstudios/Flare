@@ -317,8 +317,8 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 		Message.AnchorPoint = Vector2.new(0.5, 0)
 		Message.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 		Message.BackgroundTransparency = 1.000
-		Message.Position = UDim2.new(0.45, 0, 0.312000006, 0)
-		Message.Size = UDim2.new(0.90, 0, 0.5, 0)
+		Message.Position = UDim2.new(0.50, 0, 0.312000006, 0)
+		Message.Size = UDim2.new(1, 0, 0.5, 0)
 		Message.Font = Enum.Font.GothamSemibold
 		Message.Text = message
 		Message.TextColor3 = themes.TextColor
