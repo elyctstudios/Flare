@@ -283,9 +283,8 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 		local UICorner_4 = Instance.new("UICorner")
 		local UICorner_5 = Instance.new("UICorner")
 		local NotificationSound = Instance.new("Sound")
-		NotificationSound.Parent = game.Workspace
-		
-		NotificationSound.SoundId = "rbxassetid://6205430632"
+
+		NotificationSound.SoundId = "6205430632"
 		NotificationSound:Play()
 
 		Template.Name = "Template"
