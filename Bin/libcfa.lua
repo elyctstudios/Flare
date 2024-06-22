@@ -288,8 +288,9 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 		local Bar = Instance.new("Frame")
 		local UICorner_4 = Instance.new("UICorner")
 		local UICorner_5 = Instance.new("UICorner")
-
-
+		local NotificationSound = Instance.new("Sound")
+		
+		NotificationSound.SoundId = "rbxassetid://6205430632"
 
 		Template.Name = "Template"
 		Template.Parent = CurrentAlert
@@ -352,6 +353,8 @@ function CFAHub:CreateWindow(title, gameName, intro, cursor)
 		if buttonEnable == false then
 			YesButton.BackgroundTransparency = 0.6
 			YesButton.Active = false
+			YesButton.Visible = false
+			NoButton.Visible = false
 		else
 			YesButton.BackgroundTransparency = 0
 		end
